@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kul_pkg type="ui" name="cw_sidepane" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+  <property name="id">0xc23ca157-0x88f5-0x4e5d-0xa1-0xe6-0x13-0x8c-0xe9-0x93-0x44-0xdd</property>
+  <widget type="form" name="cw_sidepane_pane">
+    <property name="id">0x321acd4f-0x8ac6-0x4ffa-0xac-0x0d-0xaf-0x15-0x78-0x84-0x38-0xb1</property>
+    <property name="style">composite</property>
+    <property name="title">Form</property>
+    <property name="titlebar">true</property>
+    <property name="icon">nil</property>
+    <property name="bkcolor">gray</property>
+    <property name="width">auto</property>
+    <property name="height">auto</property>
+    <property name="center">center</property>
+    <property name="auto_center">false</property>
+    <property name="transparent">false</property>
+    <property name="resize">true</property>
+    <property name="show">normal</property>
+    <property name="maximum_box">true</property>
+    <property name="minimum_box">true</property>
+    <property name="close_box">true</property>
+    <property name="toolwindow">false</property>
+    <property name="app_window">true</property>
+    <property name="topmost">true</property>
+    <property name="is_service">false</property>
+    <property name="attachment">none</property>
+    <property name="attachment_size">5</property>
+    <property name="attach_dev">none</property>
+    <property name="attach_dev_size">5</property>
+    <property name="javascript">cw_sidepane_pane.js</property>
+    <property name="onGeometryChange"/>
+    <property name="onHotKey"/>
+    <property name="onDockChange"/>
+    <widget type="vbox">
+      <property name="adjust">auto</property>
+      <property name="hightlight">false</property>
+      <property name="margin">1</property>
+      <property name="scroll">false</property>
+      <property name="shadow">true</property>
+      <property name="scroll_height">auto</property>
+      <property name="scroll_amargin">5</property>
+      <property name="scroll_steps">3</property>
+      <widget type="list">
+        <property name="name">block</property>
+        <property name="id_alias">3</property>
+        <property name="width">125</property>
+        <property name="height">100</property>
+        <property name="adjust">auto</property>
+        <property name="rows">auto</property>
+        <property name="grid">true</property>
+        <property name="behavior">row</property>
+        <property name="mode">single</property>
+        <property name="sort">none</property>
+        <property name="gray">false</property>
+        <property name="visible">true</property>
+        <property name="onClick"/>
+        <property name="onRightClick"/>
+        <property name="onDoubleClick"/>
+        <property name="onHeaderClick"/>
+        <property name="onChange"/>
+        <property name="onContentMenu"/>
+        <property name="hightlight">false</property>
+        <property name="stylesheet"/>
+      </widget>
+      <widget type="list">
+        <property name="name">layer</property>
+        <property name="id_alias">4</property>
+        <property name="width">100</property>
+        <property name="height">100</property>
+        <property name="adjust">auto</property>
+        <property name="rows">auto</property>
+        <property name="grid">true</property>
+        <property name="behavior">row</property>
+        <property name="mode">single</property>
+        <property name="sort">none</property>
+        <property name="gray">false</property>
+        <property name="visible">true</property>
+        <property name="onClick"/>
+        <property name="onRightClick"/>
+        <property name="onDoubleClick"/>
+        <property name="onHeaderClick"/>
+        <property name="onChange"/>
+        <property name="onContentMenu"/>
+        <property name="hightlight">false</property>
+        <property name="stylesheet"/>
+      </widget>
+    </widget>
+  </widget>
+</kul_pkg>

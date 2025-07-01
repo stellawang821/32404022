@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kul_pkg type="entry" name="dxf_viewer" xmlns="http://www.kingmesh.com">
+  <pkgid name="mainfrm">
+    <location>mainfrm.kul</location>
+    <value>nil</value>
+  </pkgid>
+  <pkgid name="cw_topmenu">
+    <location>cw_topmenu.kul</location>
+    <value>nil</value>
+  </pkgid>
+  <pkgid name="cw_view">
+    <location>cw_view.kul</location>
+    <value>nil</value>
+  </pkgid>
+  <pkgid name="cw_statusbar">
+    <location>cw_statusbar.kul</location>
+    <value>nil</value>
+  </pkgid>
+  <pkgid name="cw_sidepane">
+    <location>cw_sidepane.kul</location>
+    <value>nil</value>
+  </pkgid>
+  <pkgid name="cw_pickup">
+    <location>cw_pickup.kul</location>
+    <value>nil</value>
+  </pkgid>
+  <formid name="mainfrm_pane">
+    <location>mainfrm.kul</location>
+    <value>nil</value>
+  </formid>
+  <formid name="cw_topmenu_pane">
+    <location>cw_topmenu.kul</location>
+    <value>nil</value>
+  </formid>
+  <formid name="cw_view_pane">
+    <location>cw_view.kul</location>
+    <value>nil</value>
+  </formid>
+  <formid name="cw_statusbar_pane">
+    <location>cw_statusbar.kul</location>
+    <value>nil</value>
+  </formid>
+  <formid name="cw_sidepane_pane">
+    <location>cw_sidepane.kul</location>
+    <value>nil</value>
+  </formid>
+  <formid name="cw_pickup_pane">
+    <location>cw_pickup.kul</location>
+    <value>nil</value>
+  </formid>
+</kul_pkg>

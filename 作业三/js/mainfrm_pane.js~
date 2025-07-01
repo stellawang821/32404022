@@ -1,0 +1,190 @@
+////////////////////////////////////////////////////////////////////////////
+// System Pre-define Functions
+// 95099372-ef3e-11ea-9c81-bf848405c62e
+
+async function OnInitializeData() {
+        //ui.sidepane.visible = false;
+        initCompositeWidget();
+        initCanvasWidget();
+}
+
+function OnCloseForm() {
+    
+}
+
+function OnException(err) {
+        //ui.MessageBox('Error', '' + err, MessageBox.Icon.Critical, MessageBox.Button.Ok);
+}
+
+//////////////////////////////////////////////////////////////////////////
+// Callback Functions.
+// 641a254c-ef3e-11ea-bc8a-379bb908bdd7
+
+//////////////////////////////////////////////////////////////////////////
+// Top Menu Callback
+
+function OnOpen() {
+        var fname = ui.OpenFileDialog("Import CAD File", unit.dir + 'data/', "DXF Files(*.dxf)");
+        if(fname) {
+                ui.statusbar.cueline = "正在打开DXF文件...";
+                
+                ui.canvas.db = null;
+                fireSideBarEvent('clear');
+                
+                parent.setTimeout(()=>{
+                        ui.canvas.dxf = fname;
+                        ui.statusbar.cueline = "就绪.";
+                        
+                        OnSensor({type : 'fit'});
+                        fireSideBarEvent('update');
+                }, 100);
+        }
+}
+
+function OnOption(){
+}
+
+function OnExit() {
+        pane.Close();
+}
+
+function OnViewPane() {
+        ui.toolbar_stack.index = 0;
+}
+
+function OnPickupPane(){
+        ui.toolbar_stack.index = 1;
+}
+
+function OnDrawPane(){
+        ui.toolbar_stack.index = 2;
+}
+
+function OnHelp(){
+}
+
+function OnFold(){
+        ui.toolbar_stack.visible = false;
+}
+
+function OnExpand(){
+        ui.toolbar_stack.visible = true;
+}
+
+//////////////////////////////////////////////////////////////////////////
+// toolbar view 
+
+function OnStatusBar(event) {
+        ui.statusbar.visible = event.data;
+}
+
+function OnSidePane(event) {
+        ui.sidepane.visible = event.data;
+}
+
+function OnSensor(event) {
+        var objSensorEntry = {
+                rotate      : GL.Sensor.Rotate,
+                pan         : GL.Sensor.Pan,
+                zoom        : GL.Sensor.Scale,
+                zoom_window : GL.Sensor.RectScale,
+                fit         : GL.Sensor.Reset,
+                xoy         : GL.Sensor.XOY,
+                yox         : GL.Sensor.YOX,
+                yoz         : GL.Sensor.YOZ,
+                zoy         : GL.Sensor.ZOY,
+                xoz         : GL.Sensor.XOZ,
+                zox         : GL.Sensor.ZOX
+        };
+        
+        ui.canvas.sensor = objSensorEntry[event.type];
+}
+
+//////////////////////////////////////////////////////////////////////////
+// Utils Functions.
+// 6c165ad6-ef3e-11ea-987c-b761a131c2fe
+
+function initCompositeWidget() {
+        let objDispatchEntry = {
+                open         : OnOpen,
+                option       : OnOption,
+                exit         : OnExit,
+                view         : OnViewPane,
+                pickup       : OnPickupPane,
+                draw         : OnDrawPane,
+                help         : OnHelp,
+                fold         : OnFold,
+                expend       : OnExpand,
+                statusbar    : OnStatusBar,
+                side_pane    : OnSidePane,
+                rotate       : OnSensor,
+                pan          : OnSensor,
+                zoom         : OnSensor,
+                zoom_window  : OnSensor,
+                fit          : OnSensor,
+                xoy          : OnSensor,
+                yox          : OnSensor,
+                yoz          : OnSensor,
+                zoy          : OnSensor,
+                xoz          : OnSensor,
+                zox          : OnSensor,
+                block_list   : event=>{ui.sidepane.bvisible = event.data;},
+                layer_list   : event=>{ui.sidepane.lvisible = event.data;}
+        };
+        ui.topmenu.RegisterCallback("event",
+                event=>{
+                        model.ide_info(event.type);  
+                        let cb = objDispatchEntry[event.type];
+                        if(cb){cb();}
+                },
+                ()=>{
+                        return undefined;
+                });
+                
+        ui.toolbar_view.RegisterCallback('event',
+                event=>{
+                        model.ide_info(event.type + ',' + event.data);
+                        let cb = objDispatchEntry[event.type];
+                        if(cb){cb(event);}
+                },
+                ()=>{
+                });
+}
+
+function initCanvasWidget() {
+        ui.canvas.adaptor('dxf', function(fname_dxf) {
+                ui.canvas.db = null;
+                
+                comx.dxf_engine.Clear();
+                comx.dxf_engine.Import(fname_dxf);
+                return comx.dxf_engine.Render();
+        });
+        
+        ui.canvas.sensor = GL.Sensor.Pan;
+        ui.canvas.tip    = '3D图形显示区';model.getTipTemplete('3D显示区', 'glcanvas.png', '3D图形显示区');
+        ui.canvas.content_menu = [
+                {
+                        name : '旋转',
+                        icon : 'rotate.bmp',
+                        id   : 1
+                }
+        ];
+}
+
+function fireSideBarEvent(type) {
+        ui.sidepane.event = { type : type};
+}
+
+/*Usage of BLOCK_EVENT
+        BLOCK_EVENT(()=>{
+                ui.[name].[var] = ...;
+        });
+*/
+
+function BLOCK_EVENT(cb) {
+        ui.block_event = true;
+        
+        cb();
+        
+        ui.block_event = false;
+}

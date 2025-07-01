@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kul_pkg type="ui" name="mainfrm" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+  <property name="id">0xb41edf02-0xd236-0x4db8-0xa3-0x31-0xd4-0xc5-0xad-0x03-0xcb-0xbf</property>
+  <widget type="form" name="mainfrm_pane">
+    <property name="id">0xd103cfcd-0x86fe-0x4979-0x95-0xbd-0x8c-0xbe-0xea-0x2d-0x04-0x44</property>
+    <property name="style">popup</property>
+    <property name="title">DCiP | DXF 浏览器 版本号-20230505</property>
+    <property name="titlebar">true</property>
+    <property name="icon">DXF.bmp</property>
+    <property name="bkcolor">gray</property>
+    <property name="width">auto</property>
+    <property name="height">auto</property>
+    <property name="center">center</property>
+    <property name="auto_center">false</property>
+    <property name="transparent">false</property>
+    <property name="resize">true</property>
+    <property name="show">maximize</property>
+    <property name="maximum_box">true</property>
+    <property name="minimum_box">true</property>
+    <property name="close_box">true</property>
+    <property name="toolwindow">false</property>
+    <property name="app_window">true</property>
+    <property name="topmost">false</property>
+    <property name="is_service">false</property>
+    <property name="attachment">none</property>
+    <property name="attachment_size">5</property>
+    <property name="attach_dev">none</property>
+    <property name="attach_dev_size">5</property>
+    <property name="javascript">mainfrm_pane.js</property>
+    <property name="onGeometryChange"/>
+    <property name="onHotKey"/>
+    <property name="onDockChange"/>
+    <widget type="vbox">
+      <property name="adjust">auto</property>
+      <property name="hightlight">false</property>
+      <property name="margin">1</property>
+      <property name="scroll">false</property>
+      <property name="shadow">true</property>
+      <property name="scroll_height">auto</property>
+      <property name="scroll_amargin">5</property>
+      <property name="scroll_steps">3</property>
+      <widget type="composite">
+        <property name="name">topmenu</property>
+        <property name="ref">cw_topmenu</property>
+        <property name="id_alias">3</property>
+        <property name="adjust">horizontal</property>
+        <property name="hightlight">false</property>
+        <property name="margin">1</property>
+        <property name="visible">true</property>
+        <property name="enable">true</property>
+      </widget>
+      <widget type="separator">
+        <property name="id_alias">4</property>
+        <property name="margin">0</property>
+        <property name="gray">false</property>
+        <property name="visible">true</property>
+      </widget>
+      <widget type="stack">
+        <property name="name">toolbar_stack</property>
+        <property name="adjust">horizontal</property>
+        <property name="margin">3</property>
+        <property name="border">flat</property>
+        <property name="label">Group Box</property>
+        <property name="index1_bind"/>
+        <property name="hightlight">false</property>
+        <widget type="composite">
+          <property name="name">toolbar_view</property>
+          <property name="ref">cw_view</property>
+          <property name="id_alias">9</property>
+          <property name="adjust">horizontal</property>
+          <property name="hightlight">false</property>
+          <property name="margin">1</property>
+          <property name="visible">true</property>
+          <property name="enable">true</property>
+        </widget>
+        <widget type="composite">
+          <property name="name">pickup</property>
+          <property name="ref">cw_pickup</property>
+          <property name="id_alias">10</property>
+          <property name="adjust">horizontal</property>
+          <property name="hightlight">false</property>
+          <property name="margin">1</property>
+          <property name="visible">true</property>
+          <property name="enable">true</property>
+        </widget>
+        <widget type="label">
+          <property name="name"/>
+          <property name="text">建设中...</property>
+          <property name="tip"/>
+          <property name="id_alias">11</property>
+          <property name="width">19</property>
+          <property name="height">8</property>
+          <property name="adjust">horizontal</property>
+          <property name="auto_width">true</property>
+          <property name="align">center</property>
+          <property name="gray">false</property>
+          <property name="visible">true</property>
+          <property name="handle_bind"/>
+          <property name="simple_bind"/>
+          <property name="visible_bind"/>
+          <property name="hightlight">false</property>
+          <property name="stylesheet"/>
+        </widget>
+      </widget>
+      <widget type="hbox">
+        <property name="adjust">auto</property>
+        <property name="hightlight">false</property>
+        <property name="margin">1</property>
+        <property name="scroll">false</property>
+        <property name="shadow">true</property>
+        <property name="scroll_width">auto</property>
+        <property name="scroll_amargin">5</property>
+        <property name="scroll_steps">3</property>
+        <widget type="glcanvas">
+          <property name="name">canvas</property>
+          <property name="id_alias">12</property>
+          <property name="width">400</property>
+          <property name="height">240</property>
+          <property name="adjust">auto</property>
+          <property name="gray">false</property>
+          <property name="visible">true</property>
+          <property name="onPickup">OnPickup()</property>
+          <property name="onHighlight"/>
+          <property name="onContentMenu"/>
+          <property name="onLButtonDown"/>
+          <property name="onLButtonUp"/>
+          <property name="onMButtonDown"/>
+          <property name="onMButtonUp"/>
+          <property name="onRButtonDown"/>
+          <property name="onRButtonUp"/>
+          <property name="onMouseMove"/>
+          <property name="onBusy"/>
+          <property name="hightlight">false</property>
+        </widget>
+        <widget type="composite">
+          <property name="name">sidepane</property>
+          <property name="ref">cw_sidepane</property>
+          <property name="id_alias">13</property>
+          <property name="adjust">vertical</property>
+          <property name="hightlight">false</property>
+          <property name="margin">1</property>
+          <property name="visible">true</property>
+          <property name="enable">true</property>
+        </widget>
+      </widget>
+      <widget type="separator">
+        <property name="id_alias">7</property>
+        <property name="margin">0</property>
+        <property name="gray">true</property>
+        <property name="visible">true</property>
+      </widget>
+      <widget type="composite">
+        <property name="name">statusbar</property>
+        <property name="ref">cw_statusbar</property>
+        <property name="id_alias">8</property>
+        <property name="adjust">horizontal</property>
+        <property name="hightlight">false</property>
+        <property name="margin">1</property>
+        <property name="visible">true</property>
+        <property name="enable">true</property>
+      </widget>
+    </widget>
+  </widget>
+</kul_pkg>

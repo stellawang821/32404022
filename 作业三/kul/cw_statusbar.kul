@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kul_pkg type="ui" name="cw_statusbar" xmlns="http://www.kingmesh.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kingmesh.com kul.xsd">
+  <property name="id">0x26f53757-0x1b16-0x469c-0x98-0xcb-0xd4-0xdb-0x08-0x72-0xd0-0x8d</property>
+  <widget type="form" name="cw_statusbar_pane">
+    <property name="id">0x457d2f2b-0x196f-0x41c2-0x81-0x40-0xce-0xe8-0x86-0x7e-0x5b-0x94</property>
+    <property name="style">composite</property>
+    <property name="title">Form</property>
+    <property name="titlebar">true</property>
+    <property name="icon">nil</property>
+    <property name="bkcolor">gray</property>
+    <property name="width">auto</property>
+    <property name="height">auto</property>
+    <property name="center">center</property>
+    <property name="auto_center">false</property>
+    <property name="transparent">false</property>
+    <property name="resize">true</property>
+    <property name="show">normal</property>
+    <property name="maximum_box">true</property>
+    <property name="minimum_box">true</property>
+    <property name="close_box">true</property>
+    <property name="toolwindow">false</property>
+    <property name="app_window">true</property>
+    <property name="topmost">true</property>
+    <property name="is_service">false</property>
+    <property name="attachment">none</property>
+    <property name="attachment_size">5</property>
+    <property name="attach_dev">none</property>
+    <property name="attach_dev_size">5</property>
+    <property name="javascript">cw_statusbar_pane.js</property>
+    <property name="onGeometryChange"/>
+    <property name="onHotKey"/>
+    <property name="onDockChange"/>
+    <widget type="hbox">
+      <property name="adjust">auto</property>
+      <property name="hightlight">false</property>
+      <property name="margin">1</property>
+      <property name="scroll">false</property>
+      <property name="shadow">true</property>
+      <property name="scroll_width">auto</property>
+      <property name="scroll_amargin">5</property>
+      <property name="scroll_steps">3</property>
+      <widget type="space">
+        <property name="size">5</property>
+      </widget>
+      <widget type="bitmap">
+        <property name="name"/>
+        <property name="picture">info1.bmp</property>
+        <property name="autoPlay">false</property>
+        <property name="id_alias">6</property>
+        <property name="width">9</property>
+        <property name="height">9</property>
+        <property name="adjust">fixed</property>
+        <property name="fit_origin_size">false</property>
+        <property name="transparent_background">true</property>
+        <property name="mouse_trace">false</property>
+        <property name="gray">false</property>
+        <property name="visible">true</property>
+        <property name="simple_bind"/>
+        <property name="handle_bind"/>
+        <property name="onLButtonDown"/>
+        <property name="onLButtonUp"/>
+        <property name="onMButtonDown"/>
+        <property name="onMButtonUp"/>
+        <property name="onRButtonDown"/>
+        <property name="onRButtonUp"/>
+        <property name="onMouseMove"/>
+        <property name="onResize"/>
+        <property name="hightlight">false</property>
+        <property name="stylesheet"/>
+      </widget>
+      <widget type="space">
+        <property name="size">2</property>
+      </widget>
+      <widget type="label">
+        <property name="name">cueline</property>
+        <property name="text">&lt;b&gt;&lt;u style="color:black"&gt;提示信息:&lt;/u&gt;&lt;/b&gt; &lt;span style="color:darkblue"&gt;就绪.&lt;/span&gt;</property>
+        <property name="tip">提示信息显示区</property>
+        <property name="id_alias">4</property>
+        <property name="width">100</property>
+        <property name="height">12</property>
+        <property name="adjust">horizontal</property>
+        <property name="auto_width">false</property>
+        <property name="align">left</property>
+        <property name="gray">false</property>
+        <property name="visible">true</property>
+        <property name="handle_bind"/>
+        <property name="simple_bind"/>
+        <property name="visible_bind"/>
+        <property name="hightlight">false</property>
+        <property name="stylesheet"/>
+      </widget>
+    </widget>
+  </widget>
+</kul_pkg>
